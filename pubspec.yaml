@@ -20,7 +20,6 @@ dependencies:
   top_modal_sheet: ^2.1.0
   easy_url_launcher: ^0.0.7
   shared_preferences: ^2.5.3
-  rename_app: ^1.6.5
   shimmer: ^3.0.0
   lottie: ^3.0.0
   dio: ^5.4.0
@@ -31,6 +30,8 @@ dependencies:
   flutter_staggered_grid_view: ^0.7.0
   get: ^4.7.2
   supabase_flutter: ^2.9.1
+  web_splash: ^1.0.4
+
 
 
 dev_dependencies:

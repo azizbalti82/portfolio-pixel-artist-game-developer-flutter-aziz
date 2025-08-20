@@ -9,6 +9,7 @@ import 'package:portfolio/theme/theme_data.dart';
 import 'package:portfolio/tools/tools.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:toastification/toastification.dart';
+import 'package:web_splash/web_splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
