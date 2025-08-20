@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "Pixel aziz",
+    "short_name": "Pixel aziz",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",
     "theme_color": "#hexcode",
-    "description": "A new Flutter project.",
+    "description": "Aziz | pixel artist And game developer",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
