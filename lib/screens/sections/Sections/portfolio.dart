@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../backend/models/pixelArtPortfolioItem.dart';
 import '../../../data/pixelArtPortfolioData.dart';
 import '../../../theme/theme_data.dart';
+import '../../../tools/tools.dart';
 
 
 class PortfolioScreen extends StatefulWidget {
@@ -35,8 +36,8 @@ class _State extends State<PortfolioScreen> {
           children: [
             SvgPicture.asset(
               "assets/images/empty.svg",
-              height: constraints.maxHeight*0.7,
-              fit: BoxFit.contain,
+              height: isLandscape(context)? constraints.maxHeight*0.7:null,
+              width: isLandscape(context)? null: constraints.maxWidth*0.9,
             ),
           ],
         );

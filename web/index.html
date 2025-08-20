@@ -17,95 +17,9 @@
 
   <title>portfolio</title>
   <link rel="manifest" href="manifest.json">
-  <style>
-    #splash {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      background-color: #ffffff; /* match your splash color */
-    }
-
-    .splash-logo {
-      width: 150px;
-      animation: rotate 2s linear infinite;
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .loading-text {
-      margin-top: 20px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 18px;
-      color: #333;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-  </style>
-
 </head>
 <body>
-<!-- Splash screen -->
-<div id="splash">
-  <img src="assets/logo/logo.png" class="splash-logo">
-  <p class="loading-text">Loading...</p>
-</div>
-
-<!-- Flutter loader -->
 <script src="flutter_bootstrap.js" async></script>
-
-<script>
-  // Hide splash screen when Flutter app is ready
-  window.addEventListener('load', function() {
-    const splash = document.getElementById('splash');
-    splash.style.display = 'none';
-  });
-</script>
-
-<style>
-  /* Splash container */
-  #splash {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    background-color: #ffffff; /* Replace with your desired background */
-  }
-
-  /* Rotating logo */
-  .splash-logo {
-    width: 150px;
-    animation: rotate 2s linear infinite;
-  }
-
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Loading text */
-  .loading-text {
-    margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: #333;
-    animation: pulse 1.5s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-</style>
 </body>
 
 </html>

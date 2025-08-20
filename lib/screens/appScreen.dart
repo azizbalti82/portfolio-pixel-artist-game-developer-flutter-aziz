@@ -54,7 +54,7 @@ class _AppScreenState extends State<AppScreen> {
           body: Stack(
             children: [
               // Glass gradient background
-              if(t.brightness==Brightness.light)
+              if(t.brightness==Brightness.light && isLandscape(context))
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
