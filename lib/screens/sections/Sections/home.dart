@@ -59,12 +59,19 @@ class _State extends State<HomeScreen> {
     ));
   }
 
-  profilePicPixel(double size){
-    return SvgPicture.asset(
-      "assets/images/profilePixel.svg",
-      width: size,
+  Widget profilePicPixel(double size) {
+    return ClipRRect(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(size),
+        bottomRight: Radius.circular(size),
+      ),
+      child: SvgPicture.asset(
+        "assets/images/profilePixel.svg",
+        width: size,
+      ),
     );
   }
+
 
   Widget about(theme t) {
     return  Obx(() {
