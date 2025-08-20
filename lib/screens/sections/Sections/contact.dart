@@ -147,9 +147,11 @@ class _ContactScreenState extends State<ContactScreen> {
           // Name
           TextFormField(
             controller: _nameController,
-            decoration: const InputDecoration(
+            style: TextStyle(color: t.textColor), // 👈 input text color
+            decoration: InputDecoration(
               labelText: "Name",
-              border: OutlineInputBorder(),
+              labelStyle: TextStyle(color: t.textColor), // 👈 label color
+              border: const OutlineInputBorder(),
             ),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
@@ -165,16 +167,17 @@ class _ContactScreenState extends State<ContactScreen> {
           // Email
           TextFormField(
             controller: _emailController,
-            decoration: const InputDecoration(
+            style: TextStyle(color: t.textColor), // 👈 input text color
+            decoration: InputDecoration(
               labelText: "Email",
-              border: OutlineInputBorder(),
+              labelStyle: TextStyle(color: t.textColor), // 👈 label color
+              border: const OutlineInputBorder(),
             ),
             validator: (value) {
               if (value == null || value.trim().isEmpty) {
                 return "Enter your email";
               }
-              final emailRegex =
-              RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+              final emailRegex = RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
               if (!emailRegex.hasMatch(value.trim())) {
                 return "Enter a valid email";
               }
@@ -186,8 +189,10 @@ class _ContactScreenState extends State<ContactScreen> {
           // Source dropdown
           DropdownButtonFormField<String>(
             value: _selectedSource,
+            style: TextStyle(color: t.textColor), // 👈 text color inside field
             decoration: InputDecoration(
               labelText: "Where did you discover my work?",
+              labelStyle: TextStyle(color: t.textColor), // 👈 label color
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -195,19 +200,24 @@ class _ContactScreenState extends State<ContactScreen> {
             items: _sources.map((source) {
               return DropdownMenuItem(
                 value: source,
-                child: Text(source),
+                child: Text(
+                  source,
+                  style: TextStyle(color: t.textColor), // 👈 dropdown menu items color
+                ),
               );
             }).toList(),
             onChanged: (value) => setState(() => _selectedSource = value),
             validator: (value) =>
             value == null ? "Please select a source" : null,
           ),
+
           const SizedBox(height: 16),
 
           // Message
           TextFormField(
             controller: _messageController,
             maxLines: 5,
+            style: TextStyle(color: t.textColor), // 👈 set text color
             decoration: const InputDecoration(
               labelText: "Message",
               border: OutlineInputBorder(),
@@ -222,6 +232,7 @@ class _ContactScreenState extends State<ContactScreen> {
               return null;
             },
           ),
+
           const SizedBox(height: 20),
           CustomButton(
             t: t,
@@ -423,17 +434,21 @@ class _ContactScreenState extends State<ContactScreen> {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
-                CustomButton(
-                  t: t,
-                  icon: "launch",
-                  text: "Main Portfolio",
-                  onPressed: () async{
-                    await EasyLauncher.url(
-                      url: "https://azizbalti.netlify.app/",
-                    );
-                  },
-                  isLoading: false,
-                ),
+                FittedBox(
+                  child:CustomButton(
+                    t: t,
+                    icon: "launch",
+                    text: "Main Portfolio",
+                    onPressed: () async{
+                      await EasyLauncher.url(
+                        url: "https://azizbalti.netlify.app/",
+                      );
+                    },
+                    isLoading: false,
+                    isFullRow: false,
+                  ),
+                )
+
               ],
             ),
           ),
@@ -463,21 +478,21 @@ class _DiscoverSelectState extends State<DiscoverSelect> {
   ];
 
   String? _selectedSource;
+  final Provider provider = Get.find<Provider>();
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<String>(
+    return Obx(() {
+      theme t = getTheme(provider);
+      return DropdownButtonFormField<String>(
       value: _selectedSource,
       decoration: InputDecoration(
         labelText: "Where did you discover my work?",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
       ),
       items: _sources.map((source) {
         return DropdownMenuItem(
           value: source,
-          child: Text(source),
+          child: Text(source,style: TextStyle(color: t.textColor),),
         );
       }).toList(),
       onChanged: (value) {
@@ -485,6 +500,6 @@ class _DiscoverSelectState extends State<DiscoverSelect> {
           _selectedSource = value;
         });
       },
-    );
+    );});
   }
 }
