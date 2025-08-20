@@ -67,7 +67,9 @@ class _State extends State<HomeScreen> {
   }
 
   Widget about(theme t) {
-    return Column(
+    return  Obx(() {
+      t = getTheme(provider);
+      return Column(
       crossAxisAlignment: isLandscape(context)? CrossAxisAlignment.start:CrossAxisAlignment.center,
       children: [
         TypingText(text: 'Welcome to my portfolio',t: t,),
@@ -77,8 +79,9 @@ class _State extends State<HomeScreen> {
           "Hey, I'm Aziz an indie game developer passionate about pixel art. "
               "I love crafting creative experiences, and I’d be excited to work together!",
           style: TextStyle(
-            fontSize: isLandscape(context)? 25:16,
+            fontSize: isLandscape(context)? 22:16,
             height: 1.5,
+            color: t.textColor
           ),
           maxLines: 5,
           minFontSize: 12,
@@ -103,9 +106,7 @@ class _State extends State<HomeScreen> {
               ),
               const SizedBox(width: 4),
      if(!isLandscape(context))
-     Obx(() {
-    t = getTheme(provider);
-              return CustomButtonOutline(
+    CustomButtonOutline(
                 t: t,
                 borderSize: 2,
                 icon: provider.isDark.value ? "sun" : "moon",
@@ -115,13 +116,12 @@ class _State extends State<HomeScreen> {
                 },
                 isLoading: false,
                 isFullRow: false,
-              );}),
+              ),
             ],
           ) ,
         )
-
       ],
-    );
+    );});
   }
 
 

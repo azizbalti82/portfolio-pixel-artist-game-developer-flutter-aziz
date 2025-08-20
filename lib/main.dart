@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/provider.dart';
 import 'package:portfolio/screens/appScreen.dart';
 import 'package:portfolio/settingsService.dart';
@@ -71,6 +72,9 @@ class _MainState extends State<Main>{
           cursorColor: t.accentColor,
           selectionColor: t.accentColor.withOpacity(0.5),
           selectionHandleColor: t.accentColor,
+        ),
+        textTheme: GoogleFonts.poppinsTextTheme(
+          Theme.of(context).textTheme,
         ),
       ),
       home: AppScreen(t: t,),
