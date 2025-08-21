@@ -17,7 +17,8 @@ import 'package:web_splash/web_splash.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(Provider());
-  await dotenv.load(fileName: "assets/.env");
+  //await dotenv.load(fileName: "assets/.env");
+  await dotenv.load();
 
   //update values
   bool isDark = await SettingsService.getIsDark();
