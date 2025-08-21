@@ -19,6 +19,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(Provider());
 
+  if (!kIsWeb) {
+    await dotenv.load(fileName: "assets/.env");
+  }
+
   final supabaseUrl = kIsWeb
       ? const String.fromEnvironment('SUPABASE_URL')
       : dotenv.env['SUPABASE_URL'];
@@ -27,8 +31,6 @@ Future<void> main() async {
       ? const String.fromEnvironment('SUPABASE_ANON_KEY')
       : dotenv.env['SUPABASE_ANON_KEY'];
 
-  //await dotenv.load(fileName: "assets/.env");
-  await dotenv.load();
 
   //update values
   bool isDark = await SettingsService.getIsDark();
