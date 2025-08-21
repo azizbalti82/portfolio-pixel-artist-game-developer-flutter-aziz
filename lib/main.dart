@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/provider.dart';
@@ -14,17 +17,24 @@ import 'package:web_splash/web_splash.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(Provider());
+  await dotenv.load(fileName: "assets/.env");
 
   //update values
   bool isDark = await SettingsService.getIsDark();
   final Provider provider = Get.find<Provider>();
   provider.setIsDark(isDark);
 
-  await Supabase.initialize(
-    url: 'https://hdktkvcjtgqowtcpplgp.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhka3RrdmNqdGdxb3d0Y3BwbGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU2NjUwODAsImV4cCI6MjA3MTI0MTA4MH0.ROFrBd8NLI6d2GelHsoB92fNy2J2KA4z7dmVd8YjrY8',
-  );
+  final supabaseUrl = dotenv.env['supabase_url'];
+  final supabaseAnonKey = dotenv.env['supabase_anon_key'];
 
+  try {
+    await Supabase.initialize(
+        url: supabaseUrl!,
+        anonKey: supabaseAnonKey!
+    );
+  }catch(e){
+    log("supabase .env keys are null i think: $e");
+  }
 
   runApp(ToastificationWrapper( child: Main()));
 }

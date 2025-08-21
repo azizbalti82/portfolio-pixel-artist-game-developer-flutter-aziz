@@ -31,6 +31,7 @@ dependencies:
   get: ^4.7.2
   supabase_flutter: ^2.9.1
   web_splash: ^1.0.4
+  flutter_dotenv: ^6.0.0
 
 
 
