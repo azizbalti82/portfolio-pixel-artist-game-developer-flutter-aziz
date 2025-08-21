@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -17,6 +18,15 @@ import 'package:web_splash/web_splash.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(Provider());
+
+  final supabaseUrl = kIsWeb
+      ? const String.fromEnvironment('SUPABASE_URL')
+      : dotenv.env['SUPABASE_URL'];
+
+  final supabaseKey = kIsWeb
+      ? const String.fromEnvironment('SUPABASE_ANON_KEY')
+      : dotenv.env['SUPABASE_ANON_KEY'];
+
   //await dotenv.load(fileName: "assets/.env");
   await dotenv.load();
 
@@ -25,13 +35,10 @@ Future<void> main() async {
   final Provider provider = Get.find<Provider>();
   provider.setIsDark(isDark);
 
-  final supabaseUrl = dotenv.env['supabase_url'];
-  final supabaseAnonKey = dotenv.env['supabase_anon_key'];
-
   try {
     await Supabase.initialize(
         url: supabaseUrl!,
-        anonKey: supabaseAnonKey!
+        anonKey: supabaseKey!
     );
   }catch(e){
     log("supabase .env keys are null i think: $e");
