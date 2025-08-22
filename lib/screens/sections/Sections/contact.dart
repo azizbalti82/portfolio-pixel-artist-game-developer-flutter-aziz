@@ -68,26 +68,29 @@ class _ContactScreenState extends State<ContactScreen> {
             crossAxisAlignment:
             landscape ? CrossAxisAlignment.start : CrossAxisAlignment.center,
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Let's work together ",
-                    style: GoogleFonts.getFont(
-                      'Jersey 10',
-                      fontSize: landscape ? 60 : 40,
-                      fontWeight: FontWeight.bold,
-                      color: t.accentColor,
+              FittedBox(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Let's work together ",
+                      style: GoogleFonts.getFont(
+                        'Jersey 10',
+                        fontSize: landscape ? 60 : 40,
+                        fontWeight: FontWeight.bold,
+                        color: t.accentColor,
+                      ),
+                      textAlign: landscape ? TextAlign.start : TextAlign.center,
                     ),
-                    textAlign: landscape ? TextAlign.start : TextAlign.center,
-                  ),
-                  SvgPicture.asset(
-                    "assets/icons/pixelHeart.svg",
-                    width: 50,
-                    color:Color(0xFFFA6767),
-                  ),
-                ],
-              ),
+                    SvgPicture.asset(
+                      "assets/icons/pixelHeart.svg",
+                      width: 50,
+                      color:Color(0xFFFA6767),
+                    ),
+                  ],
+                ),
+              )
+              ,
               const SizedBox(height: 40),
 
               landscape?Row(
