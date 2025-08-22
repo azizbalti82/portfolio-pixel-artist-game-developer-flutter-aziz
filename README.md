@@ -1,4 +1,6 @@
 
+<img width="1920" height="1280" alt="phone" src="https://github.com/user-attachments/assets/5c066c3f-83c8-4f58-9fec-c043e9cc8328" />
+<img width="1920" height="1280" alt="web" src="https://github.com/user-attachments/assets/2357e751-15f1-4ce7-a041-6f38e49eb5c9" />
 
 ## 🔗 Table of Contents
 
