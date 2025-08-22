@@ -1,6 +1,5 @@
-
-<img width="1920" height="1280" alt="phone" src="https://github.com/user-attachments/assets/5c066c3f-83c8-4f58-9fec-c043e9cc8328" />
 <img width="1920" height="1280" alt="web" src="https://github.com/user-attachments/assets/2357e751-15f1-4ce7-a041-6f38e49eb5c9" />
+<img width="1920" height="1280" alt="phone" src="https://github.com/user-attachments/assets/5c066c3f-83c8-4f58-9fec-c043e9cc8328" />
 
 ## 🔗 Table of Contents
 
@@ -11,10 +10,10 @@
   - [☑️ Prerequisites](#-prerequisites)
   - [⚙️ Installation](#-installation)
   - [🤖 Usage](#-usage)
-- [📌 Project Roadmap](#-project-roadmap)
 - [🔰 Contributing](#-contributing)
 - [🎗 License](#-license)
 - [🙌 Acknowledgments](#-acknowledgments)
+- [💬 Contact](#-acknowledgments)
 
 ---
 
@@ -137,20 +136,6 @@ flutter build macos
 flutter build linux
 ```
 
-
-## 📌 Project Roadmap
-
-- [x] **Initial Setup**: ~~Set up Flutter project structure and basic navigation~~
-- [x] **Pixel Art Gallery**: ~~Implement image gallery with zoom functionality~~
-- [ ] **Game Showcase Module**: Add interactive game project displays
-- [ ] **Animation System**: Implement time-lapse pixel art creation animations
-- [ ] **Contact Form**: Add functional contact form with email integration
-- [ ] **Performance Optimization**: Implement lazy loading and caching for images
-- [ ] **Accessibility Features**: Add screen reader support and keyboard navigation
-- [ ] **Analytics Integration**: Track portfolio engagement and popular content
-
----
-
 ## 🔰 Contributing
 
 Contributions to improve this portfolio are welcome! Here's how you can help:
@@ -174,4 +159,14 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **Open Source Contributors**: For the various packages and tools used in this project
 - **Design Inspiration**: Thanks to various portfolio websites and mobile apps that inspired the UI/UX design
 
-----
+---
+
+## 💬 Contact Me
+
+Your feedback and thoughts are highly valued. Feel free to connect with me through:
+
+- **Email:** azizbalti.dev@gmail.com
+- **LinkedIn:** [aziz balti](https://www.linkedin.com/in/aziz-balti/)
+
+
+### Designed and developed with ❤️ by [Aziz balti](https://azizbalti.netlify.app/).
