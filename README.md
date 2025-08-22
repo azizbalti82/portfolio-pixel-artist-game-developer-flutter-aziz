@@ -3,6 +3,7 @@
 
 ## 🔗 Table of Contents
 
+- [🌐 Live Preview](#-live-preview)
 - [📍 Overview](#-overview)
 - [👾 Features](#-features)
 - [📁 Project Structure](#-project-structure)
@@ -13,7 +14,12 @@
 - [🔰 Contributing](#-contributing)
 - [🎗 License](#-license)
 - [🙌 Acknowledgments](#-acknowledgments)
-- [💬 Contact](#-acknowledgments)
+- [💬 Contact](#-contact-me)
+
+---
+## 🌐 Live Preview
+
+Check out the project in action: [Live Demo](https://pixelaziz.netlify.app/)
 
 ---
 
